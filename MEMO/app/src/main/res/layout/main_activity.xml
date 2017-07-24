@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="385dp"
+    android:layout_height="60dp"
+    android:orientation="horizontal">
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFFF8C00">
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="265dp"
+        android:layout_height="60dp"
+        android:background="#FFFF8C00"
+        >
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textSize="50dp"
+            android:textColor="#FFFF"
+            android:layout_centerHorizontal="true"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="#FFFF8C00"
+        >
+
+        <ImageButton
+           android:id="@+id/addmemo"
+            android:onClick="AddmMemoOnClick"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/plus" />
+    </RelativeLayout>
+</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/memoListView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>
