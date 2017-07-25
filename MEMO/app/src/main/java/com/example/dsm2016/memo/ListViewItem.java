@@ -15,10 +15,10 @@ public class ListViewItem {
     private String dateStr;
 
 
-    public void setTitleStr(EditText title){
+    public void setTitleStr(String title){
         titleStr=title;
     }
-    public void setDateStr(Date date){
+    public void setDateStr(String date){
         dateStr=date;
     }
 

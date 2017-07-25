@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -20,11 +21,11 @@ import java.util.Objects;
  * Created by dsm2016 on 2017-07-24.
  */
 
-public class ListViewAdapter extends BaseAdapter {
+public class ListViewAdapter extends BaseAdapter implements View.OnClickListener {
 
 
 
-    private ArrayList<ListViewItem> listViewItemList=new ArrayList<ListViewItem>();
+    private ArrayList<ListViewItem> listViewItemList= new ArrayList<ListViewItem>();
 
     public ListViewAdapter(){
 
@@ -43,6 +44,11 @@ public class ListViewAdapter extends BaseAdapter {
     }
 
     @Override
+    public void onClick(View v) {
+
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent){
         final int pos=position;
         final Context context=parent.getContext();
@@ -52,7 +58,14 @@ public class ListViewAdapter extends BaseAdapter {
         }
         TextView titleTextView=(TextView)convertView.findViewById(R.id.title);
         TextView dateTextView=(TextView)convertView.findViewById(R.id.date);
-
+        Button button=(Button)convertView.findViewById(R.id.delete);
+        button.setText("삭제");
+        button.setOnClickListener(new Button.OnClickListener(){
+            public void onClick(View v){
+                listViewItemList.remove(pos);
+                notifyDataSetChanged();
+            }
+        });
         ListViewItem listViewItem=listViewItemList.get(position);
 
         titleTextView.setText(listViewItem.getTitle());
@@ -63,7 +76,7 @@ public class ListViewAdapter extends BaseAdapter {
     public Object getItem(int position){
        return listViewItemList.get(position);
     }
-    public void addItem(EditText title, Date date){
+    public void addItem(String title, String date){
         ListViewItem item=new ListViewItem();
         item.setTitleStr(title);
         item.setDateStr(date);

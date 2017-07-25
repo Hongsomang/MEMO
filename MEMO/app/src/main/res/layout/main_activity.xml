@@ -16,9 +16,11 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/memo"
         android:layout_width="265dp"
         android:layout_height="60dp"
         android:background="#FFFF8C00"
+
         >
         <TextView
             android:layout_width="160dp"
@@ -26,7 +28,8 @@
             android:text="@string/app_name"
             android:textSize="50dp"
             android:textColor="#FFFF"
-            android:layout_centerHorizontal="true"/>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
 
     </RelativeLayout>
@@ -35,7 +38,9 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:background="#FFFF8C00"
-        >
+        android:layout_alignBottom="@+id/memo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <ImageButton
            android:id="@+id/addmemo"
@@ -54,7 +59,10 @@
         android:background="#FFF">
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
             <ListView
                 android:id="@+id/memoListView"
                 android:layout_width="match_parent"
