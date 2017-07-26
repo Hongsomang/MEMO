@@ -50,7 +50,9 @@ public class MainActivity extends AppCompatActivity {
     private Button.OnClickListener clickListener =new Button.OnClickListener(){
         @Override
         public void onClick(final View v) {
-            Context mContext = getApplicationContext();
+            Intent intent=new Intent(getApplicationContext(),MemoActivity.class);
+            startActivity(intent);
+         /*   Context mContext = getApplicationContext();
 
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);
             final View layout = inflater.inflate(R.layout.test, (ViewGroup) findViewById(R.id.layout_root));
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             AlertDialog ad = aDialog.create();
-            ad.show();
+            ad.show();*/
 
         }
     };
