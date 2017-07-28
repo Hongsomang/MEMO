@@ -3,6 +3,7 @@ package com.example.dsm2016.memo;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -40,18 +41,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.main_activity);
         adapter=new ListViewAdapter();
         lv=(ListView) findViewById(R.id.memoListView);
         lv.setAdapter(adapter);
         imm=(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
         findViewById(R.id.addmemo).setOnClickListener(clickListener);
+
+
+
     }
     private Button.OnClickListener clickListener =new Button.OnClickListener(){
         @Override
         public void onClick(final View v) {
+
             Intent intent=new Intent(getApplicationContext(),MemoActivity.class);
             startActivity(intent);
+
          /*   Context mContext = getApplicationContext();
 
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(LAYOUT_INFLATER_SERVICE);

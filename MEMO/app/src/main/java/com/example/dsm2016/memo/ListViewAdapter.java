@@ -24,10 +24,9 @@ import java.util.Objects;
 public class ListViewAdapter extends BaseAdapter implements View.OnClickListener {
 
 
+    private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>();
 
-    private ArrayList<ListViewItem> listViewItemList= new ArrayList<ListViewItem>();
-
-    public ListViewAdapter(){
+    public ListViewAdapter() {
 
     }
 
@@ -35,7 +34,6 @@ public class ListViewAdapter extends BaseAdapter implements View.OnClickListener
     public int getCount() {
         return listViewItemList.size();
     }
-
 
 
     @Override
@@ -49,35 +47,37 @@ public class ListViewAdapter extends BaseAdapter implements View.OnClickListener
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
-        final int pos=position;
-        final Context context=parent.getContext();
-        if(convertView==null){
-            LayoutInflater inflater=(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView=inflater.inflate(R.layout.listview_item,parent,false);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        final int pos = position;
+        final Context context = parent.getContext();
+        if (convertView == null) {
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            convertView = inflater.inflate(R.layout.listview_item, parent, false);
         }
-        TextView titleTextView=(TextView)convertView.findViewById(R.id.title);
-        TextView dateTextView=(TextView)convertView.findViewById(R.id.date);
-        Button button=(Button)convertView.findViewById(R.id.delete);
+        TextView titleTextView = (TextView) convertView.findViewById(R.id.title);
+        TextView dateTextView = (TextView) convertView.findViewById(R.id.date);
+        Button button = (Button) convertView.findViewById(R.id.delete);
         button.setText("삭제");
-        button.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
+        button.setOnClickListener(new Button.OnClickListener() {
+            public void onClick(View v) {
                 listViewItemList.remove(pos);
                 notifyDataSetChanged();
             }
         });
-        ListViewItem listViewItem=listViewItemList.get(position);
+        ListViewItem listViewItem = listViewItemList.get(position);
 
         titleTextView.setText(listViewItem.getTitle());
         dateTextView.setText(listViewItem.getDate());
         return convertView;
     }
+
     @Override
-    public Object getItem(int position){
-       return listViewItemList.get(position);
+    public Object getItem(int position) {
+        return listViewItemList.get(position);
     }
-    public void addItem(String title, String date){
-        ListViewItem item=new ListViewItem();
+
+    public void addItem(String title, String date) {
+        ListViewItem item = new ListViewItem();
         item.setTitleStr(title);
         item.setDateStr(date);
         listViewItemList.add(item);
