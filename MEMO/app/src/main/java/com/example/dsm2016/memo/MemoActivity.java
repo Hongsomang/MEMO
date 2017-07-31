@@ -1,6 +1,7 @@
 package com.example.dsm2016.memo;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import android.widget.Toast;
  */
 
 public class MemoActivity extends AppCompatActivity implements View.OnClickListener {
-
+    private DBHelper dbHelper;
     // EditText titlefiled,memofiled;
     ImageButton savebtn, backbtn;
 
@@ -29,14 +30,15 @@ public class MemoActivity extends AppCompatActivity implements View.OnClickListe
         savebtn = (ImageButton) findViewById(R.id.save);
         backbtn = (ImageButton) findViewById(R.id.back);
         savebtn.setOnClickListener(saveClick);
-
-
+        Log.d("9","9");
     }
 
     View.OnClickListener saveClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            final DBHelper dbHelper = new DBHelper(getApplicationContext(), "Memo.db", null);
+            dbHelper = new DBHelper(getApplicationContext(), "Memo.db", null);
+            dbHelper.testDB();
+            Log.d("fff","fff");
             final EditText titlefiled = (EditText) findViewById(R.id.titlefiled);
             final EditText memofiled = (EditText) findViewById(R.id.memofiled);
             if (titlefiled.getText().toString().length() == 0) {
@@ -55,9 +57,13 @@ public class MemoActivity extends AppCompatActivity implements View.OnClickListe
             //db저장
             String title = titlefiled.getText().toString();
             String memo = memofiled.getText().toString();
-            dbHelper.insert(title, memo);
-            // dbHelper.insert("insert into MEMO values(null,'"+title+"',"+memo+");");
-            Log.d("df", "df");
+            MemoData memoData=new MemoData();
+            memoData.setTitle(title);
+            memoData.setContent(memo);
+            dbHelper.insert(memoData);
+            //dbHelper.insert(title, memo);
+            //dbHelper.insert("insert into MEMO values(null,'"+title+"',"+memo+");");
+            Log.d("데이터", "저장");
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(intent);
             finish();

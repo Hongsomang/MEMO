@@ -28,4 +28,7 @@ public class ListViewItem {
     public String getDate(){
         return this.dateStr;
     }
+
+
+
 }

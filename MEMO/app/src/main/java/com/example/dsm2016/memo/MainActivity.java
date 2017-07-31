@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,24 +36,58 @@ import static android.widget.Toast.LENGTH_SHORT;
  */
 
 public class MainActivity extends AppCompatActivity {
+    String tablename="MEMO";
+    private DBHelper dbHelper;
 
-    ListViewAdapter adapter;
     ListView lv;
     InputMethodManager imm;
+    ImageButton reflesh;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.main_activity);
-        adapter=new ListViewAdapter();
+        reflesh=(ImageButton)findViewById(R.id.reflesh);
+
         lv=(ListView) findViewById(R.id.memoListView);
-        lv.setAdapter(adapter);
+
         imm=(InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);
         findViewById(R.id.addmemo).setOnClickListener(clickListener);
-
+        reflesh.setOnClickListener(refleshonClick);
 
 
     }
+    View.OnClickListener refleshonClick=new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            try{
+
+
+                ListViewAdapter listViewAdapter=new ListViewAdapter();
+                String title=dbHelper.select();
+
+                listViewAdapter.addItem(title,String.valueOf(new Date(System.currentTimeMillis())));
+                lv.setAdapter(listViewAdapter);
+                Log.d("제목","불러오기");
+              /*  String sql="select title from"+tablename;
+                Cursor result=db.rawQuery(sql,null);
+                int count=result.getCount();
+                String[] sum=new String[count];
+                for(int i=0;i<count;i++){
+                    result.moveToNext();
+                    String str_title=result.getString(0);
+                    listViewAdapter.addItem(str_title,String.valueOf(new Date(System.currentTimeMillis())));
+                    lv.setAdapter(listViewAdapter);
+                }*/
+
+
+                //imm.hideSoftInputFromWindow(sum,0);
+              //  lv.setAdapter(adapter);
+            }catch (Exception e){
+
+            }
+        }
+    };
+
     private Button.OnClickListener clickListener =new Button.OnClickListener(){
         @Override
         public void onClick(final View v) {
