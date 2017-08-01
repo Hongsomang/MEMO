@@ -21,12 +21,12 @@ import java.util.Objects;
  * Created by dsm2016 on 2017-07-24.
  */
 
-public class ListViewAdapter extends BaseAdapter implements View.OnClickListener {
+public class MemoListAdapter extends BaseAdapter implements View.OnClickListener {
 
 
     private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>();
 
-    public ListViewAdapter() {
+    public MemoListAdapter() {
 
     }
 

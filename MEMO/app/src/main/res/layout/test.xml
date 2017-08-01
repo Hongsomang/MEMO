@@ -9,10 +9,10 @@
 
     <EditText
         android:id="@+id/test"
-        android:textSize="15dp"
         android:layout_width="300dp"
         android:layout_height="50dp"
+        android:inputType="text"
         android:textColor="#000"
-        android:inputType="text"/>
+        android:textSize="15dp" />
 
 </LinearLayout>

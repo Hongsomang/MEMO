@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         Log.d("1","1");
     }
+
 
 
 
@@ -62,8 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
             memoData.getTitle(),
                 memoData.getContent()});
         Log.d("Insert","완료");
-        // db.execSQL("INSERT INTO MEMO (_id, title, content) VALUES(null, '" + title + "','" + content + "');");
-       // db.close();
+
     }
 
     public void update(String title, String content) {
@@ -79,28 +80,22 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
         Log.d("6","6");
     }
-   public void select(){
-       StringBuffer sb=new StringBuffer();
-       sb.append("select title from MEMO ");
-       SQLiteDatabase db=this.getReadableDatabase();
-       Cursor cursor=db.rawQuery(sb.toString(),null);
-       MemoData memoData=new MemoData();
 
-       if(cursor.moveToNext()){
-          String title=cursor.getString(0);
-          memoData.setTitle(title);
+  public String select(int index){
+      SQLiteDatabase db = this.getReadableDatabase();
+      StringBuffer sb=new StringBuffer();
+      String result="";
+      Cursor cursor=db.rawQuery("SELECT title FROM MEMO where _id"+index,null);
+      while (cursor.moveToNext()){
+          result+=cursor.getString(0);
+      }
 
-       }
-        cursor.close();
+
+
        Log.d("7","7");
-      /* String result="";
-       Cursor cursor=db.rawQuery("SELECT TITLE FORM MEMO;",null);
-       while (cursor.moveToNext()){
-           result +=cursor.getString(0);
-       }*/
 
 
-
+        return result;
    }
    public  void testDB(){
        Log.d("8","8");
