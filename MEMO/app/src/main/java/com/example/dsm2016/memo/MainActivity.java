@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity{
                 lv.setAdapter(adapter);
                 while (true){
                     int i=1;
+
                     String title=dbHelper.select(i);
                     adapter.addItem(title,String.valueOf(new Date(System.currentTimeMillis())));
                     adapter.notifyDataSetChanged();

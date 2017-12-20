@@ -1,0 +1,67 @@
+
+#body{
+  height: 100%;
+  overflow: hidden;
+}
+#box{
+  position: relative;
+    height: auto;
+    margin: auto; <!-- 레이아웃을 싸고 있는 box의 margin을 auto로 주면 중앙정렬 효과-->
+    background-color: #F90;
+}
+  #topMenu{
+    height:50px;
+    whidth: 850px;
+    position: relative;
+    list-style: none;
+    text-emphasis-color: white;
+    background-color: #FFBB00;
+    vertical-align: middle;
+    color: white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Trebuchet MS",Dotum,Arial;
+  }
+#main{
+  background-color: #3C0;
+  float: left;
+  overflow: scroll;
+  border: 1px;
+  height:1000px;
+  width: 100%;
+  position: relative;
+}
+#top{
+  background-color: white;
+  float: left;
+  height: 35%;
+  width: 100%;
+  position: relative;
+}
+
+#bottom {
+    background-color: #C0F;
+    height:100px;
+    position: relative;
+    clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다.. -.-;;?? -->
+    float: left; <!-- 새로운 흐름을 지정해줘야 깨지지 않는다-->
+}
+.slide{background : gray; text-align:center; position:relative; width: 600px; margin: 0 auto; display: block; height:300px;}
+
+.slide_ul{display: block;}
+.slide_ul>li{position:absolute; top:0; left:0; list-style:none;z-index:10; display: block;}
+.slide_ul>li img{}
+li{list-style: none;}
+
+.show{display:block;}
+.slide_btn>li{float: left; margin:0 0px 0px 0;}
+.slide_btn>li>a{display:block; width: 14px; height:14px; background: url(../images/spr.png) -24px -125px; text-indent: -999em; }
+.slide_btn>li>a.active{background-position: 0 -126px;}
+
+.slide_btn{z-index:100; position:absolute; right: 0; bottom:0; }
+
+.slide_btn:after{content:''; display:block; clear:both;}
+.slide_btn{*zoom:1;}
