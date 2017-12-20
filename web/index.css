@@ -43,11 +43,14 @@
 }
 
 #bottom {
-    background-color: #C0F;
-    height:100px;
+    background-color:white;
+    height:100%;
+    width: 100%;
+    margin-top: 20%;
     position: relative;
-    clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다.. -.-;;?? -->
-    float: left; <!-- 새로운 흐름을 지정해줘야 깨지지 않는다-->
+
+    /*clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다.. -.-;;?? -->
+    float: left; <!-- 새로운 흐름을 지정해줘야 깨지지 않는다-->*/
 }
 .slide{background : gray; text-align:center; position:relative; width: 600px; margin: 0 auto; display: block; height:300px;}
 
@@ -65,3 +68,21 @@ li{list-style: none;}
 
 .slide_btn:after{content:''; display:block; clear:both;}
 .slide_btn{*zoom:1;}
+#bar{
+  height: 30px;
+  width: 100%;
+}
+#table{
+  background-color: : #FFBB00;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+}
+input.write{
+  background:#FFBB00;
+  height: 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+  float: right;
+  width: 60px;
+}
