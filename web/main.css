@@ -1,11 +1,14 @@
 
 #body{
-  height: 100%;
+  height: 1000px;
+  width: :1000px;
+  margin: 0px;
+  padding: 0px;
   overflow: hidden;
 }
 #box{
   position: relative;
-    height: auto;
+    height: 100%;
     margin: auto; <!-- 레이아웃을 싸고 있는 box의 margin을 auto로 주면 중앙정렬 효과-->
     background-color: #F90;
 }
@@ -42,11 +45,11 @@
   position: relative;
 }
 
-#bottom {
+div#bottom {
     background-color:white;
-    height:100%;
+    height:65%;
     width: 100%;
-    margin-top: 20%;
+  margin-top: 18%;
     position: relative;
 
     /*clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다.. -.-;;?? -->
@@ -69,20 +72,42 @@ li{list-style: none;}
 .slide_btn:after{content:''; display:block; clear:both;}
 .slide_btn{*zoom:1;}
 #bar{
-  height: 30px;
+  height: 50px;
   width: 100%;
 }
+#ul{
+  height: 50px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 #table{
-  background-color: : #FFBB00;
+  background-color: white;
   width: 100%;
   height: 100%;
   margin-top: 30px;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+}
+tr{
+  width: 1000px;
+  margin-left: 200px;
+}
+td{
+  text-align: center;
+  border:2px solid #FFBB00;
+  width: 100px;
+  height: 10%:
+}
+#td2{
+  width: 300px;
 }
 input.write{
   background:#FFBB00;
   height: 30px;
   margin-right: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
   float: right;
   width: 60px;
 }
