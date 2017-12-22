@@ -4,6 +4,22 @@
     <meta charset="utf-8" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <link rel="stylesheet" href="./index.css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <script type="text/javascript">
+  $(function() {
+    $( "#dialog" ).dialog({
+      autoOpen:false,
+      position:[800,400],
+      modal:true,
+      resizable:false
+    });
+    $("#login").on("click",function(){
+      $("#dialog").dialog("open");
+    });
+  });
+</script>
 
   </head>
   <body id="body">
@@ -12,12 +28,33 @@
       <h1>MEMO</h1>
     </div>
     <div id="content">
-      <p style="LINE-HEIGHT:50%">안녕하세요?</p>
-      <p style="LINE-HEIGHT:50%">MEMO입니다.</p>
-      <p style="LINE-HEIGHT:50%">이 웹은 어플리케이션과 연동되는</p>
-      <p style="LINE-HEIGHT:50%">메모장입니다.</p>
+      <p class="p1" style="LINE-HEIGHT:50%">안녕하세요?</p>
+      <p class="p2"style="LINE-HEIGHT:50%">MEMO입니다.</p>
+      <p  class="p3" style="LINE-HEIGHT:50%">이 웹은 어플리케이션과 연동되는</p>
+      <p  class="p4" style="LINE-HEIGHT:50%">메모장입니다.</p>
+    </div>
+    <div id="bottom">
+    <center><input type="button" class="login" id="login" value="Login"></input></center>
     </div>
   </div>
+<div id="dialog" title="Login">
+  <div>
+    <p class="pp">아이디</p>
+    <input type="text" class="id" id="id" />
+  </div>
+  <div>
+    <p class="pp">비밀번호</p>
+    <input type="password" class="pwd" id="pwd" />
+  </div>
+  <div>
+    <form method="post" action="file:///C:/Users/dsm2016/Documents/GitHub/MEMO/web/main.html">
+        <input type="submit" class="login_btn" value="로그인" />
 
+    </form>
+  </div>
+  <div>
+      <a class="join" href="#">회원가입</a>
+  </div>
+</div>
   </body>
   </html>
