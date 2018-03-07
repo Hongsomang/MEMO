@@ -55,7 +55,7 @@ div#bottom {
     /*clear: both; <!-- 상단의 흐름을 한번 끊어주기 위해 clear를 해준다.. -.-;;?? -->
     float: left; <!-- 새로운 흐름을 지정해줘야 깨지지 않는다-->*/
 }
-.slide{background : gray; text-align:center; position:relative; width: 600px; margin: 0 auto; display: block; height:300px;}
+.slide{background : gray; text-align:center; position:relative; width: 300px; margin: 0 auto; display: block; height:168px;}
 
 .slide_ul{display: block;}
 .slide_ul>li{position:absolute; top:0; left:0; list-style:none;z-index:10; display: block;}

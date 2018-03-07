@@ -1,0 +1,10 @@
+body{
+  height: 900px;
+  width: :100%;
+  margin: 0px;
+  padding: 0px;
+  overflow:hidden;
+}
+h1{
+    text-align: center;
+}
