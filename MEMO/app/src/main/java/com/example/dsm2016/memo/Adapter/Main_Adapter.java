@@ -56,6 +56,13 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.ViewHolder> 
             super(itemView);
             textTitle=(TextView)itemView.findViewById(R.id.title);
             textday=(TextView)itemView.findViewById(R.id.day);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(view.getContext(),MemoActivity.class);
+                    view.getContext().startActivity(intent);
+                }
+            });
         }
 
 

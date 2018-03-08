@@ -33,38 +33,11 @@ public class MainActivity extends AppCompatActivity {
     }
     private void initLayout(){
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
-        recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getApplicationContext(),recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent intent=new Intent(getApplicationContext(),MemoActivity.class);
-                startActivity(intent);
 
-            }
-
-            @Override
-            public void onLogItemClick(View view, int position) {
-                final AlertDialog.Builder builder=new AlertDialog.Builder(getApplication());
-                builder.setTitle("삭제")
-                        .setMessage("삭제하시겠습니까?")
-                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(getApplicationContext(),"삭제되었습니다.",Toast.LENGTH_LONG).show();
-
-                            }
-                        });
-                builder.setNegativeButton("취소", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                });
-            }
-        }));
     }
     private void initData(){
         ArrayList<main_item> list=new ArrayList<>();
-        list.add(new main_item("병신","2000-08-15"));
+        list.add(new main_item("하하","2000-08-15"));
 
         Main_Adapter mainAdapter = new Main_Adapter(list);
 
