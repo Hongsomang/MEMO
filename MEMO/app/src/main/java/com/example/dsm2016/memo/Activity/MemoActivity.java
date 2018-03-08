@@ -1,4 +1,4 @@
-package com.example.dsm2016.memo;
+package com.example.dsm2016.memo.Activity;
 
 import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.example.dsm2016.memo.R;
 
 public class MemoActivity extends AppCompatActivity {
     ImageView back,save;

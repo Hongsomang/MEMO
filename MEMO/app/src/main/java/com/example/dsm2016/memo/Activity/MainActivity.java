@@ -1,4 +1,4 @@
-package com.example.dsm2016.memo;
+package com.example.dsm2016.memo.Activity;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.dsm2016.memo.Adapter.Main_Adapter;
+import com.example.dsm2016.memo.R;
 import com.example.dsm2016.memo.iteam.RecyclerItemClickListener;
 import com.example.dsm2016.memo.iteam.main_item;
 

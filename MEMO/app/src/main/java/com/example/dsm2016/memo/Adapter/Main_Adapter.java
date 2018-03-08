@@ -1,24 +1,17 @@
 package com.example.dsm2016.memo.Adapter;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.dsm2016.memo.MemoActivity;
+import com.example.dsm2016.memo.Activity.MemoActivity;
 import com.example.dsm2016.memo.R;
 import com.example.dsm2016.memo.iteam.main_item;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by dsm2016 on 2018-03-06.
