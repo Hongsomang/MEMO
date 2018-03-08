@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MEMO</string>
+    <color name="yellow">#FAED7D</color>
 </resources>

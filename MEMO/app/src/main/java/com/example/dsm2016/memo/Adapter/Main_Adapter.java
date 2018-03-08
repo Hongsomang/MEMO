@@ -1,12 +1,18 @@
 package com.example.dsm2016.memo.Adapter;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.dsm2016.memo.MemoActivity;
 import com.example.dsm2016.memo.R;
 import com.example.dsm2016.memo.iteam.main_item;
 
@@ -51,7 +57,12 @@ public class Main_Adapter extends RecyclerView.Adapter<Main_Adapter.ViewHolder> 
             textTitle=(TextView)itemView.findViewById(R.id.title);
             textday=(TextView)itemView.findViewById(R.id.day);
         }
+
+
     }
+
+
+
 }
 
 
