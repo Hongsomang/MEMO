@@ -1,4 +1,4 @@
-var mysql=require('module/db');
+var mysql=require('mysql');
 module.exports={
     host     : '127.0.0.1',
     user     : 'root',
