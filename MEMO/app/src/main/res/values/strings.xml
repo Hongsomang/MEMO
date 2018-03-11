@@ -2,4 +2,5 @@
     <string name="app_name">MEMO</string>
     <color name="yellow">#FAED7D</color>
     <color name="white">#ffff</color>
+    <color name="gray">#DEDEDE</color>
 </resources>

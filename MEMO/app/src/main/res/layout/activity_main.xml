@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             app:contentInsetStart="0dp"
+
             android:background="#FFA633">
             <RelativeLayout
 
@@ -58,7 +59,7 @@
         </android.support.v7.widget.RecyclerView>
 
         <com.getbase.floatingactionbutton.FloatingActionsMenu
-            android:id="@+id/multiple_actions"
+            android:id="@+id/write_bt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -72,15 +73,15 @@
             fab:fab_addButtonPlusIconColor="#fff">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_a"
+                android:id="@+id/text_write_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="#fff"
                 fab:fab_colorPressed="@color/cardview_light_background"
-                fab:fab_title="Action A" />
+                fab:fab_title="text_write_bt" />
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_b"
+                android:id="@+id/draw_write_bt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="#fff"
