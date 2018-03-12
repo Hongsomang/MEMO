@@ -22,9 +22,7 @@
         <activity android:name=".Activity.LoginActivity">
         </activity>
         <activity android:name=".Activity.DrawingAcitivity"></activity>
-        <activity android:name=".sample">
 
-        </activity>
     </application>
 
 </manifest>
