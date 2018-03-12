@@ -68,15 +68,20 @@
                 android:id="@+id/thickness"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/rectangle_yellow"
+                android:src="@drawable/text_write"
+                android:background="@drawable/button_drawing"
+                android:text="thickness"
+                android:textColor="#000"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"/>
             <Button
                 android:id="@+id/color"
                 android:layout_width="0dp"
+                android:text="color"
+                android:textColor="#000"
                 android:layout_height="match_parent"
-                android:background="@drawable/rectangle_yellow"
+                android:background="@drawable/button_drawing"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"/>
@@ -85,7 +90,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/rectangle_yellow"
+                android:text="line"
+                android:textColor="#000"
+                android:background="@drawable/button_drawing"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
         </LinearLayout>
@@ -93,7 +100,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="9">
-        
+
         </FrameLayout>
 
     </LinearLayout>

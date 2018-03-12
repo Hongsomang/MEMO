@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         write_draw_bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2=new Intent(getApplicationContext(),MemoActivity.class);
+                Intent intent2=new Intent(getApplicationContext(),DrawingAcitivity.class);
                 startActivity(intent2);
             }
         });
