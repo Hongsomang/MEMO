@@ -1,5 +1,6 @@
 package com.example.dsm2016.memo.Activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 import com.example.dsm2016.memo.Dialog.Thichness_Dialog;
 import com.example.dsm2016.memo.R;
 import com.example.dsm2016.memo.iteam.Thichness_Item;
+import com.example.dsm2016.memo.view.DotView;
 
 /**
  * Created by dsm2016 on 2018-03-12.
@@ -19,6 +22,8 @@ import com.example.dsm2016.memo.iteam.Thichness_Item;
 
 public class DrawingAcitivity extends AppCompatActivity {
     Thichness_Dialog td;
+    private int color = Color.BLACK;
+    private float r ;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +43,19 @@ public class DrawingAcitivity extends AppCompatActivity {
                 td.show();
            }
       });
+
+
         int a=Thichness_Item.getInstance().getThichness();
         Log.d("값", String.valueOf(a));
+        FrameLayout stage=(FrameLayout)findViewById(R.id.stage);
+        DotView dotView=new DotView(this);
+        float ex=5f;
+       dotView.setPaintInfo(color,ex);
+        stage.addView(dotView);
+
+        int d=Thichness_Item.getInstance().getThichness();
+        r=(float)d;
+        dotView.setPaintInfo(color,r);
+
     }
 }

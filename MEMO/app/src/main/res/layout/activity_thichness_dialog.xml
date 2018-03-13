@@ -44,9 +44,9 @@
             android:layout_height="0dp"
             android:layout_weight="4"
             android:layout_gravity="center_vertical"
-            app:dsb_max="20"
-            app:dsb_min="1"
-            app:dsb_value="1" />
+            app:dsb_max="40"
+            app:dsb_min="5"
+            app:dsb_value="5" />
 
         <LinearLayout
             android:layout_width="match_parent"
