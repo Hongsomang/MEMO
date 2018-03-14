@@ -49,13 +49,13 @@ public class DrawingAcitivity extends AppCompatActivity {
         Log.d("값", String.valueOf(a));
         FrameLayout stage=(FrameLayout)findViewById(R.id.stage);
         DotView dotView=new DotView(this);
-        float ex=5f;
-       dotView.setPaintInfo(color,ex);
+    //    float ex=5f;
+   //    dotView.setPaintInfo(color,ex);
         stage.addView(dotView);
 
-        int d=Thichness_Item.getInstance().getThichness();
-        r=(float)d;
-        dotView.setPaintInfo(color,r);
+//        int d=Thichness_Item.getInstance().getThichness();
+//        r=(float)d;
+//        dotView.setPaintInfo(color,r);
 
     }
 }

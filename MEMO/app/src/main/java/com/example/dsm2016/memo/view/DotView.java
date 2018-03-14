@@ -2,6 +2,7 @@ package com.example.dsm2016.memo.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -17,29 +18,38 @@ import java.util.List;
  */
 
 public class DotView extends View {
-    private Paint paint;
+   // private Paint paint=new Paint();
+    private  Paint paint;
     private float x,y,r;
     private List<PosInfo> data;
 
     public DotView(Context context) {
         super(context);
-    }
-
-
-    public void setPaintInfo(int color,float  r){
+        data=new ArrayList();
         paint=new Paint();
-        paint.setColor(color);
-        this.r=r;
+        paint.setColor(Color.BLACK);
+        paint.setStrokeWidth(5f);
     }
+
+
+//    public void setPaintInfo(int color,float  r){
+//        paint.setColor(color);
+//        this.r=r;
+//        Log.d("dfdfdfd", String.valueOf(paint.getColor()));
+//        Log.d("dkdkdkdkd",String.valueOf(r));
+//    }
+
     @Override
     protected void onDraw(Canvas canvas) {
 
-        data=new ArrayList();
         for(PosInfo p : data){
-            canvas.drawCircle(p.getX(),p.getY(),p.getR(),p.getPaint());
-
+            r=Thichness_Item.getInstance().getThichness();
+            canvas.drawCircle(p.getX(),p.getY(),r,paint);
+//            canvas.drawCircle(p.getX(),p.getY(),p.getR(),p.getPaint());
+//            Log.d("ppppppppppp", String.valueOf(p.getPaint()));
+//            Log.d("rrrrrrrrr", String.valueOf(p.getR()));
         }
-        super.onDraw(canvas);
+       // super.onDraw(canvas);
     }
 
     @Override
@@ -48,9 +58,10 @@ public class DotView extends View {
         y=event.getY();
 
         PosInfo posInfo=new PosInfo(x,y);
-        posInfo.setPaint(paint);
 
-        posInfo.setR(r);
+        //posInfo.setPaint(paint);
+
+       // posInfo.setR(r);
         data.add(posInfo);
         invalidate();
         return true;
@@ -58,8 +69,9 @@ public class DotView extends View {
     }
 }
 class PosInfo{
-    float x,y,r;
-    private Paint paint;
+    float x,y;
+    // private float x,y,r;
+    //private Paint paint;
 
 
      PosInfo(float x, float y){
@@ -74,16 +86,16 @@ class PosInfo{
     public float getY() {
         return y;
     }
-    public void setPaint(Paint paint){
-         this.paint=paint;
-    }
-    public Paint getPaint(){
-        return paint;
-    }
-    public float getR(){
-        return r;
-    }
-    public  void setR(float r){
-        this.r=r;
-    }
+//    public void setPaint(Paint paint){
+//         this.paint=paint;
+//    }
+//    public Paint getPaint(){
+//        return paint;
+//    }
+//    public float getR(){
+//        return r;
+//    }
+//    public  void setR(float r){
+//        this.r=r;
+//    }
 }
