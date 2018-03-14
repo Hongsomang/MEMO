@@ -76,7 +76,7 @@
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"/>
             <Button
-                android:id="@+id/color"
+                android:id="@+id/drawing_color"
                 android:layout_width="0dp"
                 android:text="color"
                 android:textColor="#000"

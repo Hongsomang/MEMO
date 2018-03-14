@@ -65,9 +65,11 @@
             android:layout_height="wrap_content" />
 
         <Button
+            android:id="@+id/color_dialog_save"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="getColor"
+            android:background="@drawable/button_drawing"
+            android:textColor="#000"
             android:text="확인" />
 
 

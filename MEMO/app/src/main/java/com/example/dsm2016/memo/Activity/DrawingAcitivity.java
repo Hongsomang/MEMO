@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import com.example.dsm2016.memo.Dialog.Color_Dialog;
 import com.example.dsm2016.memo.Dialog.Thichness_Dialog;
 import com.example.dsm2016.memo.R;
 import com.example.dsm2016.memo.iteam.Thichness_Item;
@@ -22,6 +23,7 @@ import com.example.dsm2016.memo.view.DotView;
 
 public class DrawingAcitivity extends AppCompatActivity {
     Thichness_Dialog td;
+    Color_Dialog cd;
     private int color = Color.BLACK;
     private float r ;
     @Override
@@ -44,7 +46,6 @@ public class DrawingAcitivity extends AppCompatActivity {
            }
       });
 
-
         int a=Thichness_Item.getInstance().getThichness();
         Log.d("값", String.valueOf(a));
         FrameLayout stage=(FrameLayout)findViewById(R.id.stage);
@@ -56,6 +57,19 @@ public class DrawingAcitivity extends AppCompatActivity {
 //        int d=Thichness_Item.getInstance().getThichness();
 //        r=(float)d;
 //        dotView.setPaintInfo(color,r);
+
+        cd=new Color_Dialog(this);
+        WindowManager.LayoutParams wm2=cd.getWindow().getAttributes();
+        wm2.copyFrom(cd.getWindow().getAttributes());
+        wm2.width=width/2;
+        wm2.height=height/2;
+        Button color=(Button)findViewById(R.id.drawing_color);
+        color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cd.show();
+            }
+        });
 
     }
 }
