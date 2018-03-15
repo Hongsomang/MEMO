@@ -61,8 +61,8 @@ public class DrawingAcitivity extends AppCompatActivity {
         cd=new Color_Dialog(this);
         WindowManager.LayoutParams wm2=cd.getWindow().getAttributes();
         wm2.copyFrom(cd.getWindow().getAttributes());
-        wm2.width=width/2;
-        wm2.height=height/2;
+        wm2.width=500;
+        wm2.height=950;
         Button color=(Button)findViewById(R.id.drawing_color);
         color.setOnClickListener(new View.OnClickListener() {
             @Override
