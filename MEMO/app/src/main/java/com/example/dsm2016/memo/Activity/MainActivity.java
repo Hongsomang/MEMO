@@ -17,6 +17,7 @@ import com.example.dsm2016.memo.Adapter.Main_Adapter;
 import com.example.dsm2016.memo.R;
 import com.example.dsm2016.memo.iteam.RecyclerItemClickListener;
 import com.example.dsm2016.memo.iteam.main_item;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,24 @@ public class MainActivity extends AppCompatActivity {
         initLayout();
         initData();
 
+        final FloatingActionButton write_text_bt=(FloatingActionButton)findViewById(R.id.text_write_bt);
+        write_text_bt.setIcon(R.drawable.text_write);
+        write_text_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),MemoActivity.class);
+                startActivity(intent);
+            }
+        });
+        FloatingActionButton write_draw_bt=(FloatingActionButton)findViewById(R.id.draw_write_bt);
+        write_draw_bt.setIcon(R.drawable.draw);
+        write_draw_bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2=new Intent(getApplicationContext(),DrawingAcitivity.class);
+                startActivity(intent2);
+            }
+        });
     }
     private void initLayout(){
         recyclerView=(RecyclerView)findViewById(R.id.recyclerView);

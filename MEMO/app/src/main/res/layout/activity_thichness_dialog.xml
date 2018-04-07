@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:layout_height="400dp"
+    android:orientation="vertical">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFA633"
+        android:layout_weight="1"
+        app:contentInsetStart="0dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#fff"
+                android:gravity="center_vertical"
+                android:textSize="15dp"
+                android:text="굵기 설정"
+                />
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_weight="10"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="vertical">
+
+        <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+            android:id="@+id/discrete1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:layout_gravity="center_vertical"
+            app:dsb_max="40"
+            app:dsb_min="5"
+            app:dsb_value="5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/thichness_save"
+                android:background="@drawable/button_drawing"
+                android:layout_marginRight="5dp"
+                android:text="확인"
+                android:textColor="#000"
+                android:layout_gravity="right|bottom"/>
+            <Button
+                android:id="@+id/thickness_cancle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="right|bottom"
+                android:textColor="#000"
+                android:text="취소"
+                android:background="@drawable/button_drawing"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
