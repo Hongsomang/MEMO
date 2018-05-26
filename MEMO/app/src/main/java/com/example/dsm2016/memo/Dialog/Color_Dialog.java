@@ -31,7 +31,7 @@ public class Color_Dialog extends Dialog {
         requestWindowFeature(Window.FEATURE_NO_TITLE);   //다이얼로그의 타이틀바를 없애주는 옵션입니다.
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         setContentView(R.layout.activity_color_dialog);
-        intent=getIntent();
+       // intent=getIntent();
         int OldColor=intent.getIntExtra("OldColor",0);
         colorPicker=(ColorPicker)findViewById(R.id.picker);
         SVBar svBar=(SVBar)findViewById(R.id.svbar);
@@ -55,7 +55,7 @@ public class Color_Dialog extends Dialog {
     }
     public  void getColor(View view){
         intent.putExtra("color",colorPicker.getColor());
-        setResult(RESULT_OK,intent);
-        finish();
+        //setResult(RESULT_OK,intent);
+       // finish();
     }
 }
